@@ -32,13 +32,10 @@ public class TurmaService {
         return turma.getAlunos();
     }
 
-
     /**
      * Cria um novo aluno e adiciona a turma ja existente
-     * @param nome O nome do novo aluno
      * @return O Aluno que foi criado e adicionado
      */
-
     public Aluno adicionarAluno(String nome){
         if (nome == null || nome.trim().isEmpty()){
             return null;
@@ -46,5 +43,13 @@ public class TurmaService {
         Aluno novoAluno = new Aluno(nome);
         turma.addAluno(novoAluno);
         return novoAluno;
+    }
+
+    /**
+     * Remove o aluno da turma buscando pelo nome
+     * @return true se o aluno foi encontrado e removido, false caso contrário.
+     */
+    public boolean removerAluno(String nome){
+        return turma.removerAluno(nome);
     }
 }

@@ -35,4 +35,19 @@ public class AlunoController {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
+
+    /**
+     * Ep para excluir um aluno pelo nome.
+     * Responde a requisicao DELETE
+     */
+    @DeleteMapping("/{nome}")
+    public ResponseEntity<Void> removerAluno(@PathVariable String nome){
+        boolean foiRemovido = turmaService.removerAluno(nome);
+
+        if (foiRemovido) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+    }
 }
