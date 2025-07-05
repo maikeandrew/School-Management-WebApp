@@ -50,4 +50,16 @@ public class AlunoController {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
     }
+
+    // EP Update no nome do aluno
+    @PutMapping("/{nomeAtual}")
+    public ResponseEntity<Aluno> atualizarAluno(@PathVariable String nomeAtual, @RequestParam String novoNome){
+        Aluno alunoAtualizado = turmaService.atualizarNomeAluno(nomeAtual, novoNome);
+
+        if (alunoAtualizado != null){
+            return new ResponseEntity<>(alunoAtualizado, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+    }
 }

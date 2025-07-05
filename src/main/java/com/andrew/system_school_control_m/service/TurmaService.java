@@ -52,4 +52,15 @@ public class TurmaService {
     public boolean removerAluno(String nome){
         return turma.removerAluno(nome);
     }
+
+    // Atualiza o nome de um aluno existente
+    public Aluno atualizarNomeAluno(String nomeAtual, String novoNome){
+        Aluno alunoParaAtualizar = turma.buscarAluno(nomeAtual);
+
+        if (alunoParaAtualizar != null) {
+            alunoParaAtualizar.setNome(novoNome);
+            return alunoParaAtualizar;
+        }
+        return null;
+    }
 }
