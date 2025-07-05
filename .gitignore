@@ -1,8 +1,19 @@
 HELP.md
+
+# Logs #
+logs/
+*.log
+
+## Java Classes
+*.class
+
+## Maven
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+pom.xml.releaseBackup
+pom.xml.tag
 
 ### STS ###
 .apt_generated
@@ -29,5 +40,19 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+# Arquivos de propriedades sensíveis
+application.properties
+application-*.properties
+application.yml
+
+# Arquivos de configuração sensíveis
+*.jks
+*.env
+
 ### VS Code ###
 .vscode/
+
+## Others
+*.war
+.mvn/
+node_modules/
